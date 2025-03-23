@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Favicon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        canvas {
+            border: 1px solid #333;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #4a9fff, #6c63ff);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        p {
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generador de Favicon para RSP</h1>
+    <canvas id="faviconCanvas" width="64" height="64"></canvas>
+    <button id="downloadBtn">Descargar Favicon</button>
+    <p>Este es un generador simple de favicon con las iniciales "RSP" en el estilo del portfolio. Haz clic en el botón para descargar el favicon y luego colócalo en la carpeta raíz de tu proyecto.</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('faviconCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Fondo con degradado
+            const gradient = ctx.createLinearGradient(0, 0, 64, 64);
+            gradient.addColorStop(0, '#0a0a0a');
+            gradient.addColorStop(1, '#1e1e1e');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 64, 64);
+            
+            // Texto "RSP"
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Sombra para el texto
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            
+            // Texto con degradado
+            const textGradient = ctx.createLinearGradient(10, 10, 54, 54);
+            textGradient.addColorStop(0, '#4a9fff');
+            textGradient.addColorStop(1, '#6c63ff');
+            ctx.fillStyle = textGradient;
+            ctx.fillText('RSP', 32, 32);
+            
+            // Botón de descarga
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                // Convertir canvas a URL de datos
+                const dataURL = canvas.toDataURL('image/png');
+                
+                // Crear enlace de descarga
+                const link = document.createElement('a');
+                link.download = 'favicon.ico';
+                link.href = dataURL;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+    </script>
+</body>
+</html>
