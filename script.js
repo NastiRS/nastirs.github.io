@@ -55,10 +55,10 @@ function initElectricCursor() {
 function initTypeWriter() {
     const dynamicTextElement = document.querySelector('.dynamic-text');
     const phrases = [
-        'Desarrollador Back-end',
+        'Back-end Dev',
         'AI Engineer',
         'Python Fan-Boy',
-        'Modelador de Datos',
+        'Diseñador de Bases de Datos',
         'Desarrollador de APIs'
     ];
     
