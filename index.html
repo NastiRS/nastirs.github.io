@@ -179,10 +179,9 @@
                 <button class="filter-btn active" data-filter="all">Todos</button>
                 <button class="filter-btn" data-filter="backend">Back-end</button>
                 <button class="filter-btn" data-filter="ai">AI</button>
-                <button class="filter-btn" data-filter="api">API</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="backend api">
+                <div class="project-card" data-category="backend">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <i class="fas fa-server"></i>
@@ -224,7 +223,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card" data-category="backend api">
+                <div class="project-card" data-category="backend">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <i class="fas fa-database"></i>
@@ -243,6 +242,78 @@
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
+                </div>
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="assets/images/Socia.png" alt="Socia AI Platform">
+                    </div>
+                    <div class="project-content">
+                        <h3>Socia - Plataforma de IA</h3>
+                        <p>Plataforma de inteligencia artificial para automatización de procesos y análisis de datos con interfaces conversacionales.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>LangChain</span>
+                            <span>OpenAI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Popover -->
+    <div id="project-popover" class="project-popover">
+        <div class="popover-content">
+            <div class="popover-close"><i class="fas fa-times"></i></div>
+            <div class="popover-image">
+                <img src="" alt="Project Image">
+            </div>
+            <div class="popover-details">
+                <h2 class="popover-title"></h2>
+                <p class="popover-description"></p>
+                <div class="popover-tech"></div>
+                <div class="popover-links"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Carousel -->
+    <section class="companies">
+        <div class="container">
+            <div class="partners-section">
+                <div class="partners-track">
+                    <!-- Los logos se duplican para crear un efecto de carrusel infinito -->
+                    <a href="https://github.com" class="partner-logo" target="_blank">
+                        <img src="assets/images/Github.svg" alt="Github Logo">
+
+                    </a>
+                    <a href="https://www.etecsa.cu" class="partner-logo" target="_blank">
+                        <img src="assets/images/ETECSA.svg" alt="Etecsa Logo">
+                    </a>
+                    <a href="https://www.avangenio.com" class="partner-logo" target="_blank">
+                        <img src="assets/images/Avangenio.svg" alt="Avangenio Logo">
+                    </a>
+                    <a href="https://www.btech.com.mx" class="partner-logo" target="_blank">
+                        <img src="assets/images/Btech.webp" alt="Btech Logo">
+                    </a>
+                    <!-- Duplicados para el efecto infinito -->
+                    <a href="https://github.com" class="partner-logo" target="_blank">
+                        <img src="assets/images/Github.svg" alt="Github Logo">
+
+                    </a>
+                    <a href="https://www.etecsa.cu" class="partner-logo" target="_blank">
+                        <img src="assets/images/ETECSA.svg" alt="Etecsa Logo">
+                    </a>
+                    <a href="https://www.avangenio.com" class="partner-logo" target="_blank">
+                        <img src="assets/images/Avangenio.svg" alt="Avangenio Logo">
+                    </a>
+                    <a href="https://www.btech.com.mx" class="partner-logo" target="_blank">
+                        <img src="assets/images/Btech.webp" alt="Btech Logo">
+                    </a>
                 </div>
             </div>
         </div>
@@ -277,25 +348,36 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formsubmit.co/reynaldosuarezprieto@gmail.com" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Nombre" required>
+                            <input type="text" id="name" name="name" placeholder="Nombre" required>
                             <div class="form-line"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Correo Electrónico" required>
+                            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
                             <div class="form-line"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" placeholder="Asunto" required>
+                            <input type="text" id="subject" name="subject" placeholder="Asunto" required>
                             <div class="form-line"></div>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Mensaje" required></textarea>
+                            <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
                             <div class="form-line"></div>
                         </div>
+                        <!-- Campos ocultos para FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_ajax" value="true">
                         <button type="submit" class="btn primary-btn">Enviar Mensaje</button>
                     </form>
+                    <!-- Alerta de mensaje enviado -->
+                    <div id="form-alert" class="form-alert">
+                        <div class="alert-content">
+                            <i class="fas fa-check-circle"></i>
+                            <p>¡Mensaje enviado con éxito!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
