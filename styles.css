@@ -1104,7 +1104,7 @@ button {
     align-items: center;
     width: 180px;
     height: 180px;
-    margin: 0 80px;
+    margin: 0 130px;
     transition: all 0.3s ease;
     opacity: 0.6;
     filter: brightness(0) invert(1);

@@ -72,7 +72,15 @@ function initProjectPopovers() {
         card.addEventListener('click', () => {
             // Obtener datos del proyecto
             const projectTitle = card.querySelector('h3').textContent;
-            const projectDescription = card.querySelector('p').textContent;
+            
+            // Buscar descripción completa si existe, de lo contrario usar la descripción corta
+            let projectDescription = '';
+            const fullDescriptionDiv = card.querySelector('.project-description-full');
+            if (fullDescriptionDiv) {
+                projectDescription = fullDescriptionDiv.innerHTML;
+            } else {
+                projectDescription = card.querySelector('p').textContent;
+            }
             
             // Obtener imagen del proyecto (puede ser un placeholder o una imagen real)
             let projectImage;
@@ -99,7 +107,7 @@ function initProjectPopovers() {
             
             // Actualizar contenido del popover
             document.querySelector('.popover-title').textContent = projectTitle;
-            document.querySelector('.popover-description').textContent = projectDescription;
+            document.querySelector('.popover-description').innerHTML = projectDescription;
             document.querySelector('.popover-tech').innerHTML = techHTML;
             document.querySelector('.popover-links').innerHTML = linksHTML;
             

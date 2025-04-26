@@ -181,86 +181,130 @@
                 <button class="filter-btn" data-filter="ai">AI</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="backend">
-                    <div class="project-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-server"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Sistema de Gestión de APIs</h3>
-                        <p>Plataforma para gestionar y monitorear APIs con autenticación, rate limiting y analíticas en tiempo real.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>FastAPI</span>
-                            <span>Redis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="ai">
-                    <div class="project-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Modelo Predictivo de Datos</h3>
-                        <p>Sistema de análisis predictivo para datos financieros utilizando técnicas avanzadas de machine learning.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>TensorFlow</span>
-                            <span>Pandas</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="backend">
-                    <div class="project-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-database"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Microservicios Distribuidos</h3>
-                        <p>Arquitectura de microservicios para procesamiento de datos a gran escala con alta disponibilidad.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Agno</span>
-                            <span>Docker</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
                         <img src="assets/images/Socia.jpg" alt="Socia AI Platform">
                     </div>
                     <div class="project-content">
                         <h3>Socia - Plataforma de IA</h3>
-                        <p>Plataforma de inteligencia artificial para automatización de procesos y análisis de datos con interfaces conversacionales.</p>
+                        <p>Plataforma de agentes inteligentes para gestión de procesos empresariales y automatización de tareas.</p>
+                        <div class="project-description-full" style="display: none;">
+                            <p>Socia es una plataforma avanzada de agentes inteligentes diseñada para transformar la gestión empresarial mediante la automatización de procesos complejos. Ofrece capacidades de integración con múltiples ERPs del mercado, permitiendo la sincronización de datos en tiempo real y la ejecución de flujos de trabajo automatizados.</p>
+                            <p>La plataforma incorpora un sistema sofisticado de gestión documental en la nube que permite el procesamiento, clasificación y extracción de información de documentos empresariales utilizando técnicas avanzadas de procesamiento de lenguaje natural y visión por computadora.</p>
+                            <p>Sus interfaces conversacionales permiten a los usuarios interactuar con los sistemas empresariales de manera natural, facilitando la consulta de datos, generación de reportes y ejecución de tareas complejas mediante comandos en lenguaje natural. La arquitectura modular de Socia permite su adaptación a diversos sectores empresariales, desde finanzas hasta manufactura y servicios.</p>
+                        </div>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>LangChain</span>
                             <span>OpenAI</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-building"></i></a>
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
+                
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="assets/images/SE-Agents.png" alt="SE-Agents" style="visibility: hidden; position: absolute;">
+                        <div class="image-placeholder" style="background-color: #2a2a72; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; position: relative;">
+                            <i class="fas fa-robot" style="font-size: 4rem; color: #ffffff;"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>SE-Agents - Framework de Agentes Autónomos</h3>
+                        <p>Framework ligero en Python para construir agentes autónomos impulsados por LLMs.</p>
+                        <div class="project-description-full" style="display: none;">
+                            <p>SE-Agents es un framework de Python altamente modular y extensible diseñado para simplificar la creación de agentes autónomos impulsados por Modelos de Lenguaje de Gran Escala (LLMs). El framework proporciona una arquitectura robusta que permite a los desarrolladores centrarse en las capacidades de sus agentes en lugar de la infraestructura subyacente.</p>
+                            <p>Características principales:</p>
+                            <ul>
+                                <li><strong>Herramientas Conectables:</strong> Integración sencilla con herramientas externas como búsqueda web (Exa, DuckDuckGo), rastreo de páginas (Exa, Firecrawl) o funciones personalizadas.</li>
+                                <li><strong>Respuestas en Streaming:</strong> Manejo asíncrono de respuestas de LLM y eventos de herramientas para una experiencia de usuario fluida.</li>
+                                <li><strong>Prompts Personalizables:</strong> Ajuste fino del comportamiento del agente mediante descripciones, reglas, objetivos e instrucciones configurables.</li>
+                                <li><strong>Gestión de Contexto:</strong> Truncado automático del historial de conversación para ajustarse a los límites de tokens.</li>
+                                <li><strong>Modelo de Eventos Claro:</strong> Utiliza el esquema ResponseEvent para una comunicación estructurada entre el Agente y el Runner.</li>
+                            </ul>
+                            <p>El framework está diseñado con principios de código abierto y es ideal para investigadores, desarrolladores y empresas que buscan implementar soluciones basadas en agentes autónomos para diversos casos de uso, desde asistentes personales hasta sistemas de automatización complejos.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>LLMs</span>
+                            <span>Agentes</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/generalsoftwareinc/SE-Agents" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/generalsoftwareinc/SE-Agents" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="assets/images/PDF-Parser.jpg" alt="PDF-Parser">
+                    </div>
+                    <div class="project-content">
+                        <h3>PDF-Parser - Extractor de Datos de Facturas</h3>
+                        <p>Sistema para extraer y estructurar datos de facturas internacionales en formato PDF.</p>
+                        <div class="project-description-full" style="display: none;">
+                            <p>PDF-Parser es una solución avanzada de procesamiento de documentos diseñada específicamente para la extracción automatizada de datos de facturas internacionales en formato PDF. El sistema utiliza una combinación de tecnologías de reconocimiento óptico de caracteres (OCR), procesamiento de lenguaje natural (NLP) y algoritmos de aprendizaje automático para identificar, extraer y estructurar información clave de facturas con diversos formatos y en múltiples idiomas.</p>
+                            <p>La plataforma transforma documentos no estructurados en datos estructurados siguiendo schemas predefinidos, eliminando la necesidad de extracción manual de información. Esto permite al personal técnico y financiero acceder rápidamente a datos críticos como montos, fechas, información de proveedores, detalles de productos/servicios y términos de pago.</p>
+                            <p>Características principales:</p>
+                            <ul>
+                                <li><strong>Procesamiento por lotes:</strong> Capacidad para procesar grandes volúmenes de facturas simultáneamente.</li>
+                                <li><strong>Exportación flexible:</strong> Exportación de datos a múltiples formatos (JSON, CSV, XML) según las necesidades del usuario.</li>
+                                <li><strong>Análisis avanzado:</strong> Herramientas integradas para realizar análisis de gastos, tendencias de precios y patrones de compra.</li>
+                                <li><strong>Validación automática:</strong> Detección de discrepancias y errores en las facturas para garantizar la integridad de los datos.</li>
+                                <li><strong>Integración con sistemas ERP:</strong> Conectores para sincronizar datos con sistemas empresariales existentes.</li>
+                            </ul>
+                            <p>El sistema ha demostrado reducir el tiempo de procesamiento de facturas en más de un 80% y mejorar la precisión de los datos en comparación con los métodos manuales tradicionales.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>OCR</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-building"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="backend">
+                    <div class="project-image">
+                        <img src="assets/images/SIG.png" alt="Sistema Integral de Gestión">
+                    </div>
+                    <div class="project-content">
+                        <h3>SIG - Sistema Integral de Gestión</h3>
+                        <p>Sistema para gestionar el proceso completo de auditoría empresarial con notificaciones y permisos basados en roles.</p>
+                        <div class="project-description-full" style="display: none;">
+                            <p>El Sistema Integral de Gestión (SIG) es una plataforma empresarial completa diseñada para optimizar y automatizar todos los aspectos del proceso de auditoría corporativa. El sistema abarca desde la gestión de auditores y la planificación de auditorías hasta el procesamiento, análisis y seguimiento de los documentos y estados resultantes.</p>
+                            <p>Características principales:</p>
+                            <ul>
+                                <li><strong>Gestión de Auditores:</strong> Seguimiento completo de la disponibilidad, cualificaciones y asignaciones de los auditores, con herramientas para la optimización de recursos humanos.</li>
+                                <li><strong>Procesamiento Documental:</strong> Captura, indexación y análisis automatizado de documentos de auditoría con capacidades avanzadas de búsqueda y recuperación.</li>
+                                <li><strong>Sistema de Notificaciones:</strong> Motor de alertas en tiempo real que mantiene informados a todos los interesados sobre cambios de estado, plazos próximos y acciones requeridas.</li>
+                                <li><strong>Gestión de Permisos:</strong> Sistema de control de acceso basado en roles dinámicos que permite una configuración granular de permisos adaptada a la estructura organizativa.</li>
+                                <li><strong>Análisis y Reportes:</strong> Herramientas analíticas avanzadas para la generación de informes personalizados, cuadros de mando y métricas de rendimiento.</li>
+                                <li><strong>Flujos de Trabajo Configurables:</strong> Diseñador visual de flujos de trabajo que permite adaptar los procesos a las necesidades específicas de cada departamento o tipo de auditoría.</li>
+                            </ul>
+                            <p>El SIG ha sido implementado en múltiples empresas del sector financiero y manufacturero, demostrando una mejora significativa en la eficiencia de los procesos de auditoría, reducción de tiempos de ciclo y mejor cumplimiento normativo.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-building"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -289,30 +333,34 @@
                     <!-- Los logos se duplican para crear un efecto de carrusel infinito -->
                     <a href="https://github.com" class="partner-logo" target="_blank">
                         <img src="assets/images/Github.svg" alt="Github Logo">
-
-                    </a>
-                    <a href="https://www.etecsa.cu" class="partner-logo" target="_blank">
-                        <img src="assets/images/ETECSA.svg" alt="Etecsa Logo">
                     </a>
                     <a href="https://www.avangenio.com" class="partner-logo" target="_blank">
                         <img src="assets/images/Avangenio.svg" alt="Avangenio Logo">
                     </a>
                     <a href="https://www.btech.com.mx" class="partner-logo" target="_blank">
                         <img src="assets/images/Btech.webp" alt="Btech Logo">
+                    </a>
+                    <a href="https://www.uci.cu" class="partner-logo" target="_blank">
+                        <img src="assets/images/UCI.svg" alt="UCI Logo">
+                    </a>
+                    <a href="https://www.etecsa.cu" class="partner-logo" target="_blank">
+                        <img src="assets/images/ETECSA.svg" alt="Etecsa Logo">
                     </a>
                     <!-- Duplicados para el efecto infinito -->
                     <a href="https://github.com" class="partner-logo" target="_blank">
                         <img src="assets/images/Github.svg" alt="Github Logo">
-
-                    </a>
-                    <a href="https://www.etecsa.cu" class="partner-logo" target="_blank">
-                        <img src="assets/images/ETECSA.svg" alt="Etecsa Logo">
                     </a>
                     <a href="https://www.avangenio.com" class="partner-logo" target="_blank">
                         <img src="assets/images/Avangenio.svg" alt="Avangenio Logo">
                     </a>
                     <a href="https://www.btech.com.mx" class="partner-logo" target="_blank">
                         <img src="assets/images/Btech.webp" alt="Btech Logo">
+                    </a>
+                    <a href="https://www.uci.cu" class="partner-logo" target="_blank">
+                        <img src="assets/images/UCI.svg" alt="UCI Logo">
+                    </a>
+                    <a href="https://www.etecsa.cu" class="partner-logo" target="_blank">
+                        <img src="assets/images/ETECSA.svg" alt="Etecsa Logo">
                     </a>
                 </div>
             </div>
