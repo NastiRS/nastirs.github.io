@@ -607,27 +607,15 @@ button {
     z-index: 1;
 }
 
-.skill-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.skill-item {
     border: 2px solid transparent;
-    border-radius: 10px;
-    transition: all var(--transition-normal);
-    z-index: -1;
+    transition: all var(--transition-normal), border-color var(--transition-normal);
 }
 
 .skill-item:hover {
     transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(74, 159, 255, 0.2);
-}
-
-.skill-item:hover::before {
+    box-shadow: 0 15px 30px rgba(74, 159, 255, 0.3);
     border-color: var(--accent-primary);
-    box-shadow: 0 0 20px rgba(74, 159, 255, 0.3);
 }
 
 .skill-item:hover .skill-icon {
@@ -635,14 +623,85 @@ button {
 }
 
 .skill-icon {
-    transition: color var(--transition-normal);
+    transition: color var(--transition-normal), fill var(--transition-normal); /* Added fill transition */
+    font-size: 2rem; /* Base size for icons */
+    color: var(--accent-primary); /* Color for Font Awesome icons */
+    margin-bottom: 15px;
+    display: flex; /* Ensure icon container behaves consistently */
+    justify-content: flex-start; /* Align icon to the start */
+    align-items: center; /* Center icon vertically if needed */
+    height: 2rem; /* Match font-size for container height */
 }
 
-.skill-icon {
-    font-size: 2rem;
-    color: var(--accent-primary);
-    margin-bottom: 15px;
+/* Styles for Font Awesome icons */
+.skill-icon i {
+    line-height: 1; /* Ensure consistent line height */
 }
+
+/* Styles for SVG icons (img) */
+.skill-icon img {
+    width: 2rem; /* Match font-size */
+    height: 2rem; /* Match font-size */
+    fill: var(--accent-primary); /* Set SVG color using fill */
+    vertical-align: middle; /* Align SVG vertically */
+    transition: fill var(--transition-normal); /* Add transition for hover effect */
+}
+
+/* Hover effect for SVG icons */
+.skill-item:hover .skill-icon img {
+    fill: var(--accent-secondary); /* Change fill color on hover */
+}
+
+/* Specific size for larger icons */
+.skill-icon img.skill-icon-large {
+    width: 3.4rem; /* Slightly larger width */
+    height: 3.4rem; /* Slightly larger height */
+}
+
+/* Specific color for all icons - lighter blue like Python icon */
+.skill-icon img[src*="Langchain.svg"],
+.skill-icon img[src*="Agno.svg"],
+.skill-icon img[src*="Fastapi.svg"],
+.skill-icon img[src*="Pinecone.svg"],
+.skill-icon img[src*="HeyGen.svg"],
+.skill-icon img[src*="ElevenLabs.svg"],
+.skill-icon img[src*="Postgres.svg"],
+.skill-icon img[src*="PowerAutomate.svg"],
+.skill-icon img[src*="Supabase.svg"],
+.skill-icon img[src*="Ollama.svg"],
+.skill-icon img[src*="DBeaver.svg"],
+.skill-icon img[src*="Redmine.svg"]
+
+{
+    filter: invert(40%) sepia(80%) saturate(1000%) hue-rotate(190deg) brightness(100%) contrast(101%);
+}
+
+/* Hover effect for specific icons */
+.skill-item:hover .skill-icon img[src*="Langchain.svg"],
+.skill-item:hover .skill-icon img[src*="Agno.svg"],
+.skill-item:hover .skill-icon img[src*="Fastapi.svg"],
+.skill-item:hover .skill-icon img[src*="Pinecone.svg"],
+.skill-item:hover .skill-icon img[src*="HeyGen.svg"],
+.skill-item:hover .skill-icon img[src*="ElevenLabs.svg"],
+.skill-item:hover .skill-icon img[src*="Postgres.svg"],
+.skill-item:hover .skill-icon img[src*="PowerAutomate.svg"],
+.skill-item:hover .skill-icon img[src*="Supabase.svg"],
+.skill-item:hover .skill-icon img[src*="Ollama.svg"],
+.skill-item:hover .skill-icon img[src*="DBeaver.svg"] {
+    filter: invert(50%) sepia(70%) saturate(1200%) hue-rotate(200deg) brightness(110%) contrast(101%);
+}
+
+/* Special handling for OpenAI and SQLModel icons */
+.skill-icon img[src*="Openai.svg"],
+.skill-icon img[src*="SQLModel.svg"] {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(80%) saturate(1000%) hue-rotate(190deg) brightness(100%) contrast(101%);
+}
+
+.skill-item:hover .skill-icon img[src*="Openai.svg"],
+.skill-item:hover .skill-icon img[src*="SQLModel.svg"] {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(70%) saturate(1200%) hue-rotate(200deg) brightness(110%) contrast(101%);
+}
+
 
 .skill-item h4 {
     font-size: 1.2rem;
@@ -1124,6 +1183,102 @@ button {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+/* Expandable Skill Card */
+.skill-item.expandable {
+    cursor: pointer;
+    position: relative;
+    overflow: visible; /* Cambiado de hidden a visible para permitir que el contenido se desborde */
+}
+
+.skill-item.expandable::after {
+    content: 'click-me';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-primary);
+    background-color: rgba(10, 10, 10, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 5px rgba(74, 159, 255, 0.5);
+}
+
+.skill-item.expandable:hover::after {
+    transform: scale(1.1);
+}
+
+.skill-item.expandable .skill-list {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 100%; /* Colocar debajo de la tarjeta */
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+    background-color: var(--bg-tertiary); /* Fondo para que no se vea a través */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 100; /* Asegurar que esté por encima de otros elementos */
+    padding: 0;
+    border: 2px solid transparent;
+}
+
+.skill-item.expandable.expanded .skill-list {
+    max-height: 500px;
+    padding: 15px;
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 20px rgba(74, 159, 255, 0.3);
+}
+
+.skill-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.skill-list-item:hover {
+    transform: translateX(5px);
+    background-color: rgba(74, 159, 255, 0.1);
+}
+
+.skill-list-item i {
+    margin-right: 10px;
+    color: var(--accent-primary);
+}
+
+/* Aplicar el mismo filtro azul a los iconos del menú desplegable */
+.skill-list-item img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 10px;
+    filter: invert(40%) sepia(80%) saturate(1000%) hue-rotate(190deg) brightness(100%) contrast(101%);
+}
+
+/* Hover effect para los iconos del menú desplegable */
+.skill-list-item:hover img {
+    filter: invert(50%) sepia(70%) saturate(1200%) hue-rotate(200deg) brightness(110%) contrast(101%);
+}
+
+/* Asegurar que el icono de Font Awesome también sea azul */
+.skill-list-item i {
+    margin-right: 10px;
+    color: var(--accent-primary);
+}
+
+.skill-list-item:hover i {
+    color: #3a7cc3; /* Un tono más claro para el hover */
 }
 
 /* Project Popover */
