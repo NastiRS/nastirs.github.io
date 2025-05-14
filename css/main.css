@@ -1,0 +1,19 @@
+/* 
+ * MAIN.CSS
+ * Archivo principal que importa todos los demás archivos CSS
+ */
+
+/* Importar estilos base */
+@import url('base.css');
+
+/* Importar componentes */
+@import url('components.css');
+
+/* Importar layout */
+@import url('layout.css');
+
+/* Importar animaciones */
+@import url('animations.css');
+
+/* Importar estilos responsivos */
+@import url('responsive.css');

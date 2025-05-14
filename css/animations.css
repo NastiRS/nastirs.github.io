@@ -1,0 +1,219 @@
+/* 
+ * ANIMATIONS.CSS
+ * Contiene estilos para animaciones y efectos visuales
+ */
+
+/* Animación de escritura para el texto dinámico */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-text::before {
+    color: var(--accent-primary);
+    animation: glitch-animation 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    animation-delay: 1s;
+}
+
+.glitch-text::after {
+    color: var(--accent-secondary);
+    animation: glitch-animation 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes glitch-animation {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-1px, 1px);
+    }
+    40% {
+        transform: translate(-1px, -1px);
+    }
+    60% {
+        transform: translate(1px, 1px);
+    }
+    80% {
+        transform: translate(1px, -1px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.typing-container {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    height: 2.5rem;
+}
+
+.static-text {
+    color: var(--text-primary);
+}
+
+.dynamic-text {
+    color: var(--accent-primary);
+    position: relative;
+}
+
+.dynamic-text::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Animación de scroll */
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        top: 10px;
+    }
+    100% {
+        opacity: 0;
+        top: 30px;
+    }
+}
+
+/* Animación para las barras de progreso */
+@keyframes progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--width, 0);
+    }
+}
+
+/* Animación para el carrusel de marcas */
+@keyframes scrollPartners {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Fondos con patrones */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at center, rgba(62, 207, 142, 0.1) 0%, rgba(10, 10, 10, 0) 70%),
+        repeating-linear-gradient(
+            60deg, 
+            transparent 0px, 
+            transparent 35px, 
+            rgba(0, 98, 57, 0.3) 35px, 
+            rgba(0, 98, 57, 0.3) 36px
+        ),
+        repeating-linear-gradient(
+            120deg, 
+            transparent 0px, 
+            transparent 35px, 
+            rgba(0, 98, 57, 0.3) 35px, 
+            rgba(0, 98, 57, 0.3) 36px
+        ),
+        repeating-linear-gradient(
+            0deg, 
+            transparent 0px, 
+            transparent 35px, 
+            rgba(0, 98, 57, 0.3) 35px, 
+            rgba(0, 98, 57, 0.3) 36px
+        );
+    background-size: 100% 100%, 60px 104px, 60px 104px, 60px 104px;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    z-index: 0;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Patrón de hexágonos para todas las secciones */
+.about::before,
+.skills::before,
+.projects::before,
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            60deg, 
+            transparent 0px, 
+            transparent 35px, 
+            rgba(0, 98, 57, 0.3) 35px, 
+            rgba(0, 98, 57, 0.3) 36px
+        ),
+        repeating-linear-gradient(
+            120deg, 
+            transparent 0px, 
+            transparent 35px, 
+            rgba(0, 98, 57, 0.3) 35px, 
+            rgba(0, 98, 57, 0.3) 36px
+        ),
+        repeating-linear-gradient(
+            0deg, 
+            transparent 0px, 
+            transparent 35px, 
+            rgba(0, 98, 57, 0.3) 35px, 
+            rgba(0, 98, 57, 0.3) 36px
+        );
+    background-size: 60px 104px, 60px 104px, 60px 104px;
+    background-position: 0 0, 0 0, 0 0;
+    z-index: 0;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Animación para tarjetas de proyecto */
+.project-card.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+    transition: all 0.4s cubic-bezier(0.5, 0, 0.5, 1);
+}

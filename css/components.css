@@ -1,0 +1,512 @@
+/* 
+ * COMPONENTS.CSS
+ * Contiene estilos para componentes reutilizables como botones, tarjetas, etc.
+ */
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.primary-btn {
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px rgba(62, 207, 142, 0.3);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--accent-primary);
+}
+
+.secondary-btn:hover {
+    box-shadow: 0 4px 15px rgba(62, 207, 142, 0.3);
+}
+
+/* Tarjetas de habilidades */
+.skill-item {
+    background-color: var(--bg-tertiary);
+    padding: 20px;
+    border-radius: 10px;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid transparent;
+    transition: all var(--transition-normal), border-color var(--transition-normal);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(62, 207, 142, 0.3);
+    border-color: var(--accent-primary);
+}
+
+.skill-item:hover .skill-icon {
+    color: var(--accent-secondary);
+}
+
+.skill-icon {
+    transition: color var(--transition-normal), fill var(--transition-normal);
+    font-size: 2rem;
+    color: var(--accent-primary);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 2rem;
+}
+
+.skill-icon i {
+    line-height: 1;
+}
+
+.skill-icon img {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--accent-primary);
+    vertical-align: middle;
+    transition: fill var(--transition-normal);
+}
+
+.skill-item:hover .skill-icon img {
+    fill: var(--accent-secondary);
+}
+
+.skill-icon img.skill-icon-large {
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.skill-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-family: var(--font-script);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.skill-bar {
+    height: 8px;
+    background-color: var(--bg-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 4px;
+    position: relative;
+    width: 0;
+    animation: progress 1.5s ease-out forwards;
+}
+
+/* Tarjetas de proyectos */
+.project-card {
+    background-color: var(--bg-tertiary);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    will-change: transform, opacity;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    transition: none;
+    z-index: 1;
+    opacity: 0;
+}
+
+.project-card:hover::before {
+    left: 150%;
+    opacity: 1;
+    transition: left var(--transition-slow), opacity 0.1s;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-family: var(--font-script);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.project-tech span {
+    padding: 5px 12px;
+    background-color: rgba(62, 207, 142, 0.1);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: var(--accent-primary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.project-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: all var(--transition-normal);
+}
+
+.project-link:hover {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+/* Formulario de contacto */
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 0;
+    background-color: transparent;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--text-secondary);
+    transition: border-color var(--transition-fast);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--accent-primary);
+}
+
+.form-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-primary);
+    transition: width var(--transition-normal);
+}
+
+.form-group input:focus ~ .form-line, .form-group textarea:focus ~ .form-line {
+    width: 100%;
+}
+
+/* Mensajes del formulario */
+.form-message {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: opacity 0.5s ease;
+}
+
+.form-message.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--success-color);
+    border-left: 3px solid var(--success-color);
+}
+
+.form-message.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: var(--danger-color);
+    border-left: 3px solid var(--danger-color);
+}
+
+.form-message.fade-out {
+    opacity: 0;
+}
+
+/* Alerta de mensaje enviado */
+.form-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--bg-tertiary);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 2000;
+    transform: translateX(150%);
+    transition: transform 0.3s ease;
+}
+
+.form-alert.show {
+    transform: translateX(0);
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.alert-content i {
+    font-size: 1.5rem;
+    color: var(--success-color);
+}
+
+.alert-content p {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Filtros de proyectos */
+.filter-btn {
+    padding: 8px 20px;
+    background-color: var(--bg-tertiary);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    transition: all var(--transition-normal);
+    will-change: transform, background-color;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: var(--font-script);
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.filter-btn:hover::before {
+    width: 100%;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--text-primary);
+    box-shadow: 0 4px 10px rgba(62, 207, 142, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Iconos SVG específicos */
+.skill-icon img[src*="Langchain.svg"],
+.skill-icon img[src*="Agno.svg"],
+.skill-icon img[src*="agno.svg"],
+.skill-icon img[src*="Fastapi.svg"],
+.skill-icon img[src*="Pinecone.svg"],
+.skill-icon img[src*="HeyGen.svg"],
+.skill-icon img[src*="heygen.svg"],
+.skill-icon img[src*="ElevenLabs.svg"],
+.skill-icon img[src*="elevenlabs.svg"],
+.skill-icon img[src*="Postgres.svg"],
+.skill-icon img[src*="PowerAutomate.svg"],
+.skill-icon img[src*="powerautomate.svg"],
+.skill-icon img[src*="Supabase.svg"],
+.skill-icon img[src*="Ollama.svg"],
+.skill-icon img[src*="ollama.svg"],
+.skill-icon img[src*="DBeaver.svg"],
+.skill-icon img[src*="dbeaver.svg"],
+.skill-icon img[src*="Redmine.svg"],
+.skill-icon img[src*="redmine.svg"],
+.skill-icon img[src*="Anthropic.svg"],
+.skill-icon img[src*="anthropic.svg"],
+.skill-icon img[src*="deepseek.svg"],
+.skill-icon img[src*="fireworks.svg"],
+.skill-icon img[src*="Gemini.svg"],
+.skill-icon img[src*="gemini.svg"],
+.skill-icon img[src*="Github.svg"],
+.skill-icon img[src*="github.svg"],
+.skill-icon img[src*="meta.svg"],
+.skill-icon img[src*="recraft.svg"],
+.skill-icon img[src*="together.svg"]
+{
+    filter: invert(75%) sepia(40%) saturate(1000%) hue-rotate(100deg) brightness(95%) contrast(95%);
+}
+
+.skill-item:hover .skill-icon img[src*="Langchain.svg"],
+.skill-item:hover .skill-icon img[src*="Agno.svg"],
+.skill-item:hover .skill-icon img[src*="agno.svg"],
+.skill-item:hover .skill-icon img[src*="Fastapi.svg"],
+.skill-item:hover .skill-icon img[src*="Pinecone.svg"],
+.skill-item:hover .skill-icon img[src*="HeyGen.svg"],
+.skill-item:hover .skill-icon img[src*="heygen.svg"],
+.skill-item:hover .skill-icon img[src*="ElevenLabs.svg"],
+.skill-item:hover .skill-icon img[src*="elevenlabs.svg"],
+.skill-item:hover .skill-icon img[src*="Postgres.svg"],
+.skill-item:hover .skill-icon img[src*="PowerAutomate.svg"],
+.skill-item:hover .skill-icon img[src*="powerautomate.svg"],
+.skill-item:hover .skill-icon img[src*="Supabase.svg"],
+.skill-item:hover .skill-icon img[src*="Ollama.svg"],
+.skill-item:hover .skill-icon img[src*="ollama.svg"],
+.skill-item:hover .skill-icon img[src*="DBeaver.svg"],
+.skill-item:hover .skill-icon img[src*="dbeaver.svg"],
+.skill-item:hover .skill-icon img[src*="Redmine.svg"],
+.skill-item:hover .skill-icon img[src*="redmine.svg"],
+.skill-item:hover .skill-icon img[src*="Anthropic.svg"],
+.skill-item:hover .skill-icon img[src*="anthropic.svg"],
+.skill-item:hover .skill-icon img[src*="deepseek.svg"],
+.skill-item:hover .skill-icon img[src*="fireworks.svg"],
+.skill-item:hover .skill-icon img[src*="Gemini.svg"],
+.skill-item:hover .skill-icon img[src*="gemini.svg"],
+.skill-item:hover .skill-icon img[src*="Github.svg"],
+.skill-item:hover .skill-icon img[src*="github.svg"],
+.skill-item:hover .skill-icon img[src*="meta.svg"],
+.skill-item:hover .skill-icon img[src*="recraft.svg"],
+.skill-item:hover .skill-icon img[src*="together.svg"] {
+    filter: invert(15%) sepia(100%) saturate(1500%) hue-rotate(130deg) brightness(90%) contrast(105%);
+}
+
+/* Special handling for OpenAI and SQLModel icons */
+.skill-icon img[src*="Openai.svg"],
+.skill-icon img[src*="openai.svg"],
+.skill-icon img[src*="SQLModel.svg"],
+.skill-icon img[src*="sqlmodel.svg"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(40%) saturate(1000%) hue-rotate(100deg) brightness(95%) contrast(95%);
+}
+
+.skill-item:hover .skill-icon img[src*="Openai.svg"],
+.skill-item:hover .skill-icon img[src*="openai.svg"],
+.skill-item:hover .skill-icon img[src*="SQLModel.svg"],
+.skill-item:hover .skill-icon img[src*="sqlmodel.svg"] {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(1500%) hue-rotate(130deg) brightness(90%) contrast(105%);
+}
+
+/* Iconos del menú desplegable */
+.skill-list-item img,
+.skill-list img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 10px;
+    filter: invert(75%) sepia(40%) saturate(1000%) hue-rotate(100deg) brightness(95%) contrast(95%) !important;
+}
+
+.skill-list-item:hover img,
+.skill-list:hover img {
+    filter: invert(15%) sepia(100%) saturate(1500%) hue-rotate(130deg) brightness(90%) contrast(105%) !important;
+}
+
+.skill-item.expandable .skill-list .skill-list-item img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 10px;
+    filter: invert(67%) sepia(72%) saturate(456%) hue-rotate(113deg) brightness(92%) contrast(89%) !important;
+}
+
+.skill-item.expandable .skill-list .skill-list-item:hover img {
+    filter: invert(21%) sepia(56%) saturate(1012%) hue-rotate(127deg) brightness(96%) contrast(101%) !important;
+}
+
+/* Cursor eléctrico personalizado */
+.electric-cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(62, 207, 142, 0.15);
+    border: 2px solid rgba(62, 207, 142, 0.4);
+    box-shadow: 0 0 20px rgba(62, 207, 142, 0.3);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
