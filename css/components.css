@@ -510,3 +510,110 @@
     opacity: 1;
     transition: opacity 0.3s ease, transform 0.2s ease;
 }
+
+/* --- Light Mode Button & Toast --- */
+.light-mode-btn {
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary)) !important;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(62, 207, 142, 0.10);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s, color 0.2s;
+    font-size: 1.2rem;
+    color: var(--accent-primary) !important;
+    position: relative;
+    z-index: 10;
+}
+
+.light-mode-btn:hover, .light-mode-btn:focus {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--text-primary);
+    box-shadow: 0 4px 16px rgba(62, 207, 142, 0.18);
+    transform: translateY(-2px) scale(1.07);
+    outline: none;
+}
+
+.light-mode-btn i {
+    pointer-events: none;
+}
+
+/* Toast para el mensaje de modo claro */
+.lightmode-toast {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.98);
+    min-width: 220px;
+    max-width: 90vw;
+    background: rgba(34, 34, 34, 0.98);
+    color: #fff;
+    font-family: var(--font-script), 'Inter', Arial, sans-serif;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(62, 207, 142, 0.18), 0 1.5px 8px rgba(0,0,0,0.12);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3000;
+    transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    letter-spacing: 0.5px;
+    text-align: center;
+    user-select: none;
+}
+
+.lightmode-toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) scale(1.03);
+    animation: toast-pop 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+.lightmode-toast.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) scale(0.92);
+    animation: toast-hide 0.32s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+@keyframes toast-pop {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.92);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.07);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.03);
+    }
+}
+
+@keyframes toast-hide {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.03);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.92);
+    }
+}
+
+/* Estado pulsado del botón de light mode */
+.light-mode-btn.pressed {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--text-primary);
+    box-shadow: 0 6px 24px rgba(62, 207, 142, 0.22);
+    transform: scale(1.13);
+    outline: none;
+    border: 2px solid var(--accent-secondary);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s, border 0.2s;
+}

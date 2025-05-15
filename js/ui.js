@@ -72,3 +72,47 @@ function initProjectFilters() {
         });
     });
 }
+
+// Inicializa el toast para el botón de light mode
+function initLightModeToast() {
+    const btn = document.getElementById('light-mode-btn');
+    const toast = document.getElementById('lightmode-toast');
+    if (!btn || !toast) return;
+
+    btn.addEventListener('click', () => {
+        // Mostrar el mensaje
+        toast.style.display = 'block';
+        toast.classList.add('show');
+        btn.classList.add('pressed'); // Marcar el botón como pulsado
+
+        // Ocultar después de 2.5 segundos
+        const hideToast = () => {
+            toast.classList.remove('show');
+            toast.classList.add('hide');
+            // Esperar la duración de la animación de salida antes de ocultar el div
+            setTimeout(() => {
+                toast.style.display = 'none';
+                toast.classList.remove('hide');
+            }, 320);
+            btn.classList.remove('pressed'); // Quitar el estado pulsado
+            btn.blur(); // Quitar el foco para resetear el color
+        };
+        setTimeout(hideToast, 2500);
+
+        // Si el usuario hace clic fuera del botón o toast, quitar el estado pulsado
+        const handleClickOutside = (e) => {
+            if (!btn.contains(e.target) && !toast.contains(e.target)) {
+                hideToast();
+                document.removeEventListener('mousedown', handleClickOutside);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+    });
+}
+
+// Inicialización global de UI
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    initProjectFilters();
+    initLightModeToast();
+});
