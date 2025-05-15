@@ -456,8 +456,8 @@
 }
 
 /* Special handling for OpenAI and SQLModel icons */
+.skill-icon img[src*="Openai_main.svg"],
 .skill-icon img[src*="Openai.svg"],
-.skill-icon img[src*="openai.svg"],
 .skill-icon img[src*="SQLModel.svg"],
 .skill-icon img[src*="sqlmodel.svg"] {
     filter: brightness(0) saturate(100%) invert(75%) sepia(40%) saturate(1000%) hue-rotate(100deg) brightness(95%) contrast(95%);
