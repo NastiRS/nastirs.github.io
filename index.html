@@ -136,7 +136,7 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><img src="assets/icons/Openai.svg" alt="OpenAI Icon" class="skill-icon-large"></div>
+                            <div class="skill-icon"><img src="assets/icons/Openai_main.svg" alt="OpenAI Icon" class="skill-icon-large"></div>
                             <h4>OpenAI-Agents</h4>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 80%"></div>
@@ -268,9 +268,10 @@
                                     <span>Hugging Face</span>
                                 </div>
                                 <div class="skill-list-item">
-                                    <img src="assets/icons/fireworks.svg" alt="Fal.ai Icon" style="width: 1.2rem; height: 1.2rem;">
+                                    <img src="assets/icons/Fal.svg" alt="Fal.ai Icon" style="width: 1.2rem; height: 1.2rem;">
                                     <span>Fal.ai</span>
                                 </div>
+                                
                                 <div class="skill-list-item">
                                     <img src="assets/icons/openrouter.svg" alt="Fal.ai Icon" style="width: 1.2rem; height: 1.2rem;">
                                     <span>OpenRouter</span>
@@ -278,6 +279,14 @@
                                 <div class="skill-list-item">
                                     <img src="assets/icons/deepseek.svg" alt="Deepseek Icon" style="width: 1.2rem; height: 1.2rem;">
                                     <span>Deepseek</span>
+                                </div>
+                                <div class="skill-list-item">
+                                    <img src="assets/icons/Recraft.svg" alt="Recraft Icon" style="width: 1.2rem; height: 1.2rem;">
+                                    <span>Recraft</span>
+                                </div>
+                                <div class="skill-list-item">
+                                    <img src="assets/icons/fireworks.svg" alt="Fireworks.ai Icon" style="width: 1.2rem; height: 1.2rem;">
+                                    <span>Fireworks.ai</span>
                                 </div>
                                 <div class="skill-list-item">
                                     <img src="assets/icons/together.svg" alt="Together.ai Icon" style="width: 1.2rem; height: 1.2rem;">
@@ -305,16 +314,14 @@
             <div class="projects-grid">
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="assets/images/Socia.jpg" alt="Socia AI Platform">
+                        <img src="assets/images/Socia.jpg" alt="Socia AI Platform" style="visibility: hidden; position: absolute;">
+                        <div class="image-placeholder" style="background-color: #1e3a8a; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; position: relative;">
+                            <i class="fas fa-users-cog" style="font-size: 4rem; color: #ffffff;"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>Socia - Plataforma de IA</h3>
                         <p>Plataforma de agentes inteligentes para gestión de procesos empresariales y automatización de tareas.</p>
-                        <div class="project-description-full" style="display: none;">
-                            <p>Socia es una plataforma avanzada de agentes inteligentes diseñada para transformar la gestión empresarial mediante la automatización de procesos complejos. Ofrece capacidades de integración con múltiples ERPs del mercado, permitiendo la sincronización de datos en tiempo real y la ejecución de flujos de trabajo automatizados.</p>
-                            <p>La plataforma incorpora un sistema sofisticado de gestión documental en la nube que permite el procesamiento, clasificación y extracción de información de documentos empresariales utilizando técnicas avanzadas de procesamiento de lenguaje natural y visión por computadora.</p>
-                            <p>Sus interfaces conversacionales permiten a los usuarios interactuar con los sistemas empresariales de manera natural, facilitando la consulta de datos, generación de reportes y ejecución de tareas complejas mediante comandos en lenguaje natural. La arquitectura modular de Socia permite su adaptación a diversos sectores empresariales, desde finanzas hasta manufactura y servicios.</p>
-                        </div>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>LangChain</span>
@@ -337,18 +344,6 @@
                     <div class="project-content">
                         <h3>SE-Agents - Framework de Agentes Autónomos</h3>
                         <p>Framework ligero en Python para construir agentes autónomos impulsados por LLMs.</p>
-                        <div class="project-description-full" style="display: none;">
-                            <p>SE-Agents es un framework de Python altamente modular y extensible diseñado para simplificar la creación de agentes autónomos impulsados por Modelos de Lenguaje de Gran Escala (LLMs). El framework proporciona una arquitectura robusta que permite a los desarrolladores centrarse en las capacidades de sus agentes en lugar de la infraestructura subyacente.</p>
-                            <p>Características principales:</p>
-                            <ul>
-                                <li><strong>Herramientas Conectables:</strong> Integración sencilla con herramientas externas como búsqueda web (Exa, DuckDuckGo), rastreo de páginas (Exa, Firecrawl) o funciones personalizadas.</li>
-                                <li><strong>Respuestas en Streaming:</strong> Manejo asíncrono de respuestas de LLM y eventos de herramientas para una experiencia de usuario fluida.</li>
-                                <li><strong>Prompts Personalizables:</strong> Ajuste fino del comportamiento del agente mediante descripciones, reglas, objetivos e instrucciones configurables.</li>
-                                <li><strong>Gestión de Contexto:</strong> Truncado automático del historial de conversación para ajustarse a los límites de tokens.</li>
-                                <li><strong>Modelo de Eventos Claro:</strong> Utiliza el esquema ResponseEvent para una comunicación estructurada entre el Agente y el Runner.</li>
-                            </ul>
-                            <p>El framework está diseñado con principios de código abierto y es ideal para investigadores, desarrolladores y empresas que buscan implementar soluciones basadas en agentes autónomos para diversos casos de uso, desde asistentes personales hasta sistemas de automatización complejos.</p>
-                        </div>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>LLMs</span>
@@ -363,24 +358,14 @@
                 
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="assets/images/PDF-Parser.jpg" alt="PDF-Parser">
+                        <img src="assets/images/PDF-Parser.jpg" alt="PDF-Parser" style="visibility: hidden; position: absolute;">
+                        <div class="image-placeholder" style="background-color: #dc2626; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; position: relative;">
+                            <i class="fas fa-file-invoice" style="font-size: 4rem; color: #ffffff;"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>PDF-Parser - Extractor de Datos de Facturas</h3>
                         <p>Sistema para extraer y estructurar datos de facturas internacionales en formato PDF.</p>
-                        <div class="project-description-full" style="display: none;">
-                            <p>PDF-Parser es una solución avanzada de procesamiento de documentos diseñada específicamente para la extracción automatizada de datos de facturas internacionales en formato PDF. El sistema utiliza una combinación de tecnologías de reconocimiento óptico de caracteres (OCR), procesamiento de lenguaje natural (NLP) y algoritmos de aprendizaje automático para identificar, extraer y estructurar información clave de facturas con diversos formatos y en múltiples idiomas.</p>
-                            <p>La plataforma transforma documentos no estructurados en datos estructurados siguiendo schemas predefinidos, eliminando la necesidad de extracción manual de información. Esto permite al personal técnico y financiero acceder rápidamente a datos críticos como montos, fechas, información de proveedores, detalles de productos/servicios y términos de pago.</p>
-                            <p>Características principales:</p>
-                            <ul>
-                                <li><strong>Procesamiento por lotes:</strong> Capacidad para procesar grandes volúmenes de facturas simultáneamente.</li>
-                                <li><strong>Exportación flexible:</strong> Exportación de datos a múltiples formatos (JSON, CSV, XML) según las necesidades del usuario.</li>
-                                <li><strong>Análisis avanzado:</strong> Herramientas integradas para realizar análisis de gastos, tendencias de precios y patrones de compra.</li>
-                                <li><strong>Validación automática:</strong> Detección de discrepancias y errores en las facturas para garantizar la integridad de los datos.</li>
-                                <li><strong>Integración con sistemas ERP:</strong> Conectores para sincronizar datos con sistemas empresariales existentes.</li>
-                            </ul>
-                            <p>El sistema ha demostrado reducir el tiempo de procesamiento de facturas en más de un 80% y mejorar la precisión de los datos en comparación con los métodos manuales tradicionales.</p>
-                        </div>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>OCR</span>
@@ -396,24 +381,14 @@
                 
                 <div class="project-card" data-category="backend">
                     <div class="project-image">
-                        <img src="assets/images/SIG.png" alt="Sistema Integral de Gestión">
+                        <img src="assets/images/SIG.png" alt="Sistema Integral de Gestión" style="visibility: hidden; position: absolute;">
+                        <div class="image-placeholder" style="background-color: #059669; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; position: relative;">
+                            <i class="fas fa-clipboard-check" style="font-size: 4rem; color: #ffffff;"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>SIG - Sistema Integral de Gestión</h3>
                         <p>Sistema para gestionar el proceso completo de auditoría empresarial con notificaciones y permisos basados en roles.</p>
-                        <div class="project-description-full" style="display: none;">
-                            <p>El Sistema Integral de Gestión (SIG) es una plataforma empresarial completa diseñada para optimizar y automatizar todos los aspectos del proceso de auditoría corporativa. El sistema abarca desde la gestión de auditores y la planificación de auditorías hasta el procesamiento, análisis y seguimiento de los documentos y estados resultantes.</p>
-                            <p>Características principales:</p>
-                            <ul>
-                                <li><strong>Gestión de Auditores:</strong> Seguimiento completo de la disponibilidad, cualificaciones y asignaciones de los auditores, con herramientas para la optimización de recursos humanos.</li>
-                                <li><strong>Procesamiento Documental:</strong> Captura, indexación y análisis automatizado de documentos de auditoría con capacidades avanzadas de búsqueda y recuperación.</li>
-                                <li><strong>Sistema de Notificaciones:</strong> Motor de alertas en tiempo real que mantiene informados a todos los interesados sobre cambios de estado, plazos próximos y acciones requeridas.</li>
-                                <li><strong>Gestión de Permisos:</strong> Sistema de control de acceso basado en roles dinámicos que permite una configuración granular de permisos adaptada a la estructura organizativa.</li>
-                                <li><strong>Análisis y Reportes:</strong> Herramientas analíticas avanzadas para la generación de informes personalizados, cuadros de mando y métricas de rendimiento.</li>
-                                <li><strong>Flujos de Trabajo Configurables:</strong> Diseñador visual de flujos de trabajo que permite adaptar los procesos a las necesidades específicas de cada departamento o tipo de auditoría.</li>
-                            </ul>
-                            <p>El SIG ha sido implementado en múltiples empresas del sector financiero y manufacturero, demostrando una mejora significativa en la eficiencia de los procesos de auditoría, reducción de tiempos de ciclo y mejor cumplimiento normativo.</p>
-                        </div>
                         <div class="project-tech">
                             <span>Java</span>
                             <span>Spring Boot</span>
@@ -431,21 +406,7 @@
         </div>
     </section>
 
-    <!-- Project Popover -->
-    <div id="project-popover" class="project-popover">
-        <div class="popover-content">
-            <div class="popover-close"><i class="fas fa-times"></i></div>
-            <div class="popover-image">
-                <img src="" alt="Project Image">
-            </div>
-            <div class="popover-details">
-                <h2 class="popover-title"></h2>
-                <p class="popover-description"></p>
-                <div class="popover-tech"></div>
-                <div class="popover-links"></div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Mensaje emergente para el modo claro -->
     <div id="lightmode-toast" class="lightmode-toast" style="display: none;">

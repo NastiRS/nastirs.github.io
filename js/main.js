@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initScrollAppearance();
     initElectricCursor();
-    initProjectPopovers();
+
     initBrandCarousel();
     initExpandableCards();
 });
