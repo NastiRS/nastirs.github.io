@@ -617,3 +617,24 @@
     border: 2px solid var(--accent-secondary);
     transition: background 0.2s, box-shadow 0.2s, transform 0.15s, border 0.2s;
 }
+
+/* Brand logo estilo botón moderno */
+.brand-logo {
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+    /* Sin border-radius para cuadrado */
+    width: 60px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    box-shadow: 0 2px 8px rgba(62, 207, 142, 0.10);
+    margin-right: 18px;
+    letter-spacing: 2px;
+    border: 2px solid transparent;
+    /* Sin cursor pointer, sin user-select, sin transición extra */
+}

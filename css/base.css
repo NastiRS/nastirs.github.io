@@ -3,8 +3,14 @@
  * Contiene variables globales, reset y estilos base
  */
 
-/* Importar fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+/* Fuente local Share Tech */
+@font-face {
+    font-family: 'Share Tech';
+    src: url('../font/ShareTech-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* Variables globales */
 :root {
@@ -48,8 +54,27 @@ html {
     font-size: 16px;
 }
 
+body,
+h1, h2, h3, h4, h5, h6,
+a,
+.section-title,
+.btn,
+button,
+input,
+textarea,
+.nav-links,
+.navbar,
+.hero,
+.about,
+.skills,
+.projects,
+.contact,
+footer,
+*::placeholder {
+    font-family: var(--font-main) !important;
+}
+
 body {
-    font-family: var(--font-main);
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
