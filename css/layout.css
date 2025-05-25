@@ -85,10 +85,287 @@
     padding-top: var(--header-height);
 }
 
-.hero-content {
-    text-align: center;
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
     z-index: 1;
-    max-width: 800px;
+}
+
+.hero-content {
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.brain-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brain-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, transparent 40%, rgba(0, 255, 136, 0.08) 50%, transparent 60%);
+    border-radius: 50%;
+    animation: electricPulse 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+.brain-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    height: 140%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(0, 255, 136, 0.3) 10deg,
+        transparent 20deg,
+        transparent 40deg,
+        rgba(0, 255, 136, 0.3) 50deg,
+        transparent 60deg,
+        transparent 80deg,
+        rgba(0, 255, 136, 0.3) 90deg,
+        transparent 100deg,
+        transparent 120deg,
+        rgba(0, 255, 136, 0.3) 130deg,
+        transparent 140deg,
+        transparent 160deg,
+        rgba(0, 255, 136, 0.3) 170deg,
+        transparent 180deg,
+        transparent 200deg,
+        rgba(0, 255, 136, 0.3) 210deg,
+        transparent 220deg,
+        transparent 240deg,
+        rgba(0, 255, 136, 0.3) 250deg,
+        transparent 260deg,
+        transparent 280deg,
+        rgba(0, 255, 136, 0.3) 290deg,
+        transparent 300deg,
+        transparent 320deg,
+        rgba(0, 255, 136, 0.3) 330deg,
+        transparent 340deg,
+        transparent 360deg
+    );
+    border-radius: 50%;
+    animation: electricRotate 8s linear infinite;
+    z-index: -1;
+}
+
+.brain-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 25px #00ff88) 
+            brightness(0) 
+            saturate(100%) 
+            invert(50%) 
+            sepia(100%) 
+            saturate(3000%) 
+            hue-rotate(120deg) 
+            brightness(120%) 
+            contrast(120%);
+}
+
+
+
+@keyframes electricPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+@keyframes electricRotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 0.4;
+    }
+    25% {
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+        opacity: 0.4;
+    }
+    75% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+        opacity: 0.4;
+    }
+}
+
+.stardust-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00ff88;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 8px #00ff88, 
+                0 0 16px #00ff88,
+                0 0 24px rgba(0, 255, 136, 0.5);
+}
+
+.particle-1 {
+    top: 20%;
+    left: 15%;
+    animation: stardustFloat 6s infinite ease-in-out;
+    animation-delay: 0s;
+}
+
+.particle-2 {
+    top: 35%;
+    left: 80%;
+    animation: stardustFloat 7s infinite ease-in-out;
+    animation-delay: 1s;
+}
+
+.particle-3 {
+    top: 60%;
+    left: 25%;
+    animation: stardustFloat 5s infinite ease-in-out;
+    animation-delay: 2s;
+}
+
+.particle-4 {
+    top: 15%;
+    left: 70%;
+    animation: stardustFloat 8s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+.particle-5 {
+    top: 75%;
+    left: 60%;
+    animation: stardustFloat 6.5s infinite ease-in-out;
+    animation-delay: 1.5s;
+}
+
+.particle-6 {
+    top: 45%;
+    left: 10%;
+    animation: stardustFloat 7.5s infinite ease-in-out;
+    animation-delay: 2.5s;
+}
+
+.particle-7 {
+    top: 25%;
+    left: 45%;
+    animation: stardustFloat 5.5s infinite ease-in-out;
+    animation-delay: 3s;
+}
+
+.particle-8 {
+    top: 65%;
+    left: 85%;
+    animation: stardustFloat 6.8s infinite ease-in-out;
+    animation-delay: 0.8s;
+}
+
+.particle-9 {
+    top: 80%;
+    left: 35%;
+    animation: stardustFloat 7.2s infinite ease-in-out;
+    animation-delay: 1.8s;
+}
+
+.particle-10 {
+    top: 10%;
+    left: 55%;
+    animation: stardustFloat 6.3s infinite ease-in-out;
+    animation-delay: 2.8s;
+}
+
+.particle-11 {
+    top: 50%;
+    left: 75%;
+    animation: stardustFloat 5.8s infinite ease-in-out;
+    animation-delay: 3.5s;
+}
+
+.particle-12 {
+    top: 85%;
+    left: 20%;
+    animation: stardustFloat 7.8s infinite ease-in-out;
+    animation-delay: 4s;
+}
+
+@keyframes stardustFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(0px) translateX(0px) scale(0.8);
+        box-shadow: 0 0 8px #00ff88, 
+                    0 0 16px #00ff88,
+                    0 0 24px rgba(0, 255, 136, 0.5);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(-15px) translateX(10px) scale(1.2);
+        box-shadow: 0 0 12px #00ff88, 
+                    0 0 24px #00ff88,
+                    0 0 36px rgba(0, 255, 136, 0.8);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-25px) translateX(-5px) scale(1);
+        box-shadow: 0 0 10px #00ff88, 
+                    0 0 20px #00ff88,
+                    0 0 30px rgba(0, 255, 136, 0.6);
+    }
+    75% {
+        opacity: 0.6;
+        transform: translateY(-10px) translateX(15px) scale(1.1);
+        box-shadow: 0 0 14px #00ff88, 
+                    0 0 28px #00ff88,
+                    0 0 42px rgba(0, 255, 136, 0.7);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0px) translateX(0px) scale(0.8);
+        box-shadow: 0 0 8px #00ff88, 
+                    0 0 16px #00ff88,
+                    0 0 24px rgba(0, 255, 136, 0.5);
+    }
 }
 
 .hero h1 {
@@ -280,6 +557,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+    transition: gap 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Sección de Proyectos */
@@ -474,6 +752,11 @@
     cursor: pointer;
     position: relative;
     overflow: visible;
+    transition: margin-bottom 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-item.expandable.expanded {
+    margin-bottom: 20px;
 }
 
 .skill-item.expandable::after {
@@ -489,25 +772,33 @@
     border-radius: 10px;
     opacity: 1;
     transform: translateY(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, content 0.3s ease;
     box-shadow: 0 0 5px rgba(62, 207, 142, 0.5);
     letter-spacing: 1px;
     font-family: var(--font-script);
+    z-index: 200;
+    pointer-events: none;
 }
+
+
 
 .skill-item.expandable:hover::after {
     transform: scale(1.1);
 }
 
 .skill-item.expandable .skill-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: relative;
     width: 100%;
     max-height: 0;
+    height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 10px;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease,
+                padding 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0;
     background-color: var(--bg-tertiary);
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -517,10 +808,34 @@
 }
 
 .skill-item.expandable.expanded .skill-list {
-    max-height: 500px;
+    max-height: 400px;
+    height: 400px;
     padding: 15px;
+    margin-top: 15px;
     border-color: var(--accent-primary);
     box-shadow: 0 10px 20px rgba(62, 207, 142, 0.3);
+    overflow-y: auto;
+}
+
+/* Estilo personalizado para el scroll */
+.skill-item.expandable .skill-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.skill-item.expandable .skill-list::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 3px;
+}
+
+.skill-item.expandable .skill-list::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+.skill-item.expandable .skill-list::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+    opacity: 1;
 }
 
 .skill-list-item {
@@ -549,4 +864,63 @@
 
 .skill-list-item:hover i {
     color: var(--accent-secondary);
+}
+
+/* Emoji para la card de Supabase */
+.supabase-card {
+    position: relative;
+}
+
+.supabase-emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.supabase-emoji-tool {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%) scale(0.3) rotate(-45deg);
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 0.2s, transform 1s ease-in-out 0.2s;
+    pointer-events: none;
+    z-index: 11;
+}
+
+.supabase-emoji-cross {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%) scale(0.3) rotate(45deg);
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out 0.4s, transform 1.2s ease-in-out 0.4s;
+    pointer-events: none;
+    z-index: 11;
+}
+
+.skill-item.expandable.expanded ~ .supabase-card .supabase-emoji,
+.supabase-card.show-emoji .supabase-emoji {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.skill-item.expandable.expanded ~ .supabase-card .supabase-emoji-tool,
+.supabase-card.show-emoji .supabase-emoji-tool {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+.skill-item.expandable.expanded ~ .supabase-card .supabase-emoji-cross,
+.supabase-card.show-emoji .supabase-emoji-cross {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }

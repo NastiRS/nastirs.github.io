@@ -404,11 +404,15 @@
 .skill-icon img[src*="Ollama.svg"],
 .skill-icon img[src*="ollama.svg"],
 .skill-icon img[src*="DBeaver.svg"],
+.skill-icon img[src*="Dbeaver.svg"],
 .skill-icon img[src*="dbeaver.svg"],
 .skill-icon img[src*="Redmine.svg"],
 .skill-icon img[src*="redmine.svg"],
 .skill-icon img[src*="Anthropic.svg"],
 .skill-icon img[src*="anthropic.svg"],
+.skill-icon img[src*="Hugging-Face.svg"],
+.skill-icon img[src*="Fal.svg"],
+.skill-icon img[src*="openrouter.svg"],
 .skill-icon img[src*="deepseek.svg"],
 .skill-icon img[src*="fireworks.svg"],
 .skill-icon img[src*="Gemini.svg"],
@@ -416,6 +420,7 @@
 .skill-icon img[src*="Github.svg"],
 .skill-icon img[src*="github.svg"],
 .skill-icon img[src*="meta.svg"],
+.skill-icon img[src*="Recraft.svg"],
 .skill-icon img[src*="recraft.svg"],
 .skill-icon img[src*="together.svg"]
 {
@@ -438,11 +443,15 @@
 .skill-item:hover .skill-icon img[src*="Ollama.svg"],
 .skill-item:hover .skill-icon img[src*="ollama.svg"],
 .skill-item:hover .skill-icon img[src*="DBeaver.svg"],
+.skill-item:hover .skill-icon img[src*="Dbeaver.svg"],
 .skill-item:hover .skill-icon img[src*="dbeaver.svg"],
 .skill-item:hover .skill-icon img[src*="Redmine.svg"],
 .skill-item:hover .skill-icon img[src*="redmine.svg"],
 .skill-item:hover .skill-icon img[src*="Anthropic.svg"],
 .skill-item:hover .skill-icon img[src*="anthropic.svg"],
+.skill-item:hover .skill-icon img[src*="Hugging-Face.svg"],
+.skill-item:hover .skill-icon img[src*="Fal.svg"],
+.skill-item:hover .skill-icon img[src*="openrouter.svg"],
 .skill-item:hover .skill-icon img[src*="deepseek.svg"],
 .skill-item:hover .skill-icon img[src*="fireworks.svg"],
 .skill-item:hover .skill-icon img[src*="Gemini.svg"],
@@ -450,6 +459,7 @@
 .skill-item:hover .skill-icon img[src*="Github.svg"],
 .skill-item:hover .skill-icon img[src*="github.svg"],
 .skill-item:hover .skill-icon img[src*="meta.svg"],
+.skill-item:hover .skill-icon img[src*="Recraft.svg"],
 .skill-item:hover .skill-icon img[src*="recraft.svg"],
 .skill-item:hover .skill-icon img[src*="together.svg"] {
     filter: invert(15%) sepia(100%) saturate(1500%) hue-rotate(130deg) brightness(90%) contrast(105%);
@@ -463,6 +473,7 @@
     filter: brightness(0) saturate(100%) invert(75%) sepia(40%) saturate(1000%) hue-rotate(100deg) brightness(95%) contrast(95%);
 }
 
+.skill-item:hover .skill-icon img[src*="Openai_main.svg"],
 .skill-item:hover .skill-icon img[src*="Openai.svg"],
 .skill-item:hover .skill-icon img[src*="openai.svg"],
 .skill-item:hover .skill-icon img[src*="SQLModel.svg"],

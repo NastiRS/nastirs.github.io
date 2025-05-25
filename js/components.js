@@ -16,11 +16,26 @@ function initExpandableCards() {
             expandableCards.forEach(otherCard => {
                 if (otherCard !== card && otherCard.classList.contains('expanded')) {
                     otherCard.classList.remove('expanded');
+                    // Ocultar emoji de Supabase si se cierra otra card
+                    const supabaseCard = document.querySelector('.supabase-card');
+                    if (supabaseCard) {
+                        supabaseCard.classList.remove('show-emoji');
+                    }
                 }
             });
             
             // Toggle la clase expanded para mostrar/ocultar la lista
             card.classList.toggle('expanded');
+            
+            // Mostrar/ocultar emoji en la card de Supabase cuando se despliega AI SDKs
+            const supabaseCard = document.querySelector('.supabase-card');
+            if (supabaseCard) {
+                if (card.classList.contains('expanded')) {
+                    supabaseCard.classList.add('show-emoji');
+                } else {
+                    supabaseCard.classList.remove('show-emoji');
+                }
+            }
             
             // Si la tarjeta está expandida, hacer scroll para mostrar todo el contenido
             if (card.classList.contains('expanded')) {
@@ -44,6 +59,11 @@ function initExpandableCards() {
             expandableCards.forEach(card => {
                 card.classList.remove('expanded');
             });
+            // Ocultar emoji de Supabase cuando se cierran todas las cards
+            const supabaseCard = document.querySelector('.supabase-card');
+            if (supabaseCard) {
+                supabaseCard.classList.remove('show-emoji');
+            }
         }
     });
 }
