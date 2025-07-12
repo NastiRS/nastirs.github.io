@@ -141,6 +141,9 @@
     transform: translateY(0) scale(1);
     will-change: transform, opacity;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
 }
 
 .project-card:hover {
@@ -192,6 +195,9 @@
 
 .project-content {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .project-content h3 {
@@ -206,6 +212,7 @@
     color: var(--text-secondary);
     margin-bottom: 20px;
     font-size: 0.95rem;
+    flex-grow: 1;
 }
 
 .project-tech {
@@ -213,6 +220,7 @@
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    margin-top: auto;
 }
 
 .project-tech span {
@@ -403,6 +411,7 @@
 .skill-icon img[src*="powerautomate.svg"],
 .skill-icon img[src*="Supabase.svg"],
 .skill-icon img[src*="Firebase.svg"],
+.skill-icon img[src*="Appwrite.svg"],
 .skill-icon img[src*="Ollama.svg"],
 .skill-icon img[src*="ollama.svg"],
 .skill-icon img[src*="DBeaver.svg"],
@@ -445,6 +454,7 @@
 .skill-item:hover .skill-icon img[src*="powerautomate.svg"],
 .skill-item:hover .skill-icon img[src*="Supabase.svg"],
 .skill-item:hover .skill-icon img[src*="Firebase.svg"],
+.skill-item:hover .skill-icon img[src*="Appwrite.svg"],
 .skill-item:hover .skill-icon img[src*="Ollama.svg"],
 .skill-item:hover .skill-icon img[src*="ollama.svg"],
 .skill-item:hover .skill-icon img[src*="DBeaver.svg"],
