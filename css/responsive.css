@@ -78,9 +78,6 @@
         right: 0;
     }
     
-    .menu-toggle {
-        display: block;
-    }
     
     .hero-layout {
         grid-template-columns: 1fr;

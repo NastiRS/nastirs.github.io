@@ -45,9 +45,7 @@
             <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
         </div>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
+
     </nav>
 
     <!-- Sección de Inicio -->
@@ -321,15 +319,44 @@
                                 <div class="skill-progress" style="width: 75%"></div>
                             </div>
                         </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><img src="assets/icons/Appwrite.svg" alt="Appwrite Icon"></div>
+                            <h4>Appwrite</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><img src="assets/icons/Stripe.svg" alt="Stripe Icon"></div>
+                            <h4>Stripe</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><img src="assets/icons/Resend.svg" alt="Resend Icon"></div>
+                            <h4>Resend</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><img src="assets/icons/Signature_api.svg" alt="Signature API Icon"></div>
+                            <h4>Signature API</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
                         <div class="skill-item supabase-card">
                             <div class="skill-icon"><img src="assets/icons/Supabase.svg" alt="Supabase Icon"></div>
                             <h4>Supabase</h4>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 75%"></div>
                             </div>
-                            <div class="supabase-emoji">😅</div>
+                            <!-- <div class="supabase-emoji">😅</div>
                             <div class="supabase-emoji-tool">🔧</div>
-                            <div class="supabase-emoji-cross">❌</div>
+                            <div class="supabase-emoji-cross">❌</div> -->
                         </div>
                         <div class="skill-item expandable">
                             <div class="skill-icon"><i class="fas fa-brain"></i></div>
@@ -401,21 +428,36 @@
             <div class="projects-grid">
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="" alt="Future Mittlestand Program" style="visibility: hidden; position: absolute;">
-                        <div class="image-placeholder" style="background-color: #4a5568; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; position: relative;">
-                            <i class="fas fa-chart-line" style="font-size: 4rem; color: #ffffff;"></i>
-                        </div>
+                        <img src="assets/images/future_mittlestand.png" alt="Future Mittlestand Program" class="project-icon">
                     </div>
                     <div class="project-content">
                         <h3>Future Mittlestand Program</h3>
                         <p>Web que ayuda a empresas en Alemania y Europa a identificar necesidades y encontrar financiación (fundaciones, subvenciones, etc.) a nivel local, federal o europeo mediante IA.</p>
                         <div class="project-tech">
-                            <span>Python</span>
-                            <span>FastAPI</span>
-                            <span>AI</span>
+                            <span>TypeScript</span>
+                            <span>Mastra</span>
+                            <span>Agents</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-building"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="backend">
+                    <div class="project-image">
+                        <img src="assets/images/Synclat.png" alt="Synclat" class="project-icon">
+                    </div>
+                    <div class="project-content">
+                        <h3>Synclat</h3>
+                        <p>Plataforma para gestionar el licenciamiento de canciones de música latina para usos profesionales.</p>
+                        <div class="project-tech">
+                            <span>Typescript</span>
+                            <span>Next-JS</span>
+                            <span>Supabase</span>
+                        </div>
+                        <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                             <a href="#" class="project-link"><i class="fas fa-building"></i></a>
                         </div>
@@ -424,18 +466,15 @@
 
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="assets/images/Socia.jpg" alt="Socia AI Platform" style="visibility: hidden; position: absolute;">
-                        <div class="image-placeholder" style="background-color: #1e3a8a; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; position: relative;">
-                            <i class="fas fa-users-cog" style="font-size: 4rem; color: #ffffff;"></i>
-                        </div>
+                        <img src="assets/images/Socia.png" alt="Socia AI Platform" class="project-icon">
                     </div>
                     <div class="project-content">
                         <h3>Socia - Plataforma de IA</h3>
                         <p>Plataforma de agentes inteligentes para gestión de procesos empresariales y automatización de tareas.</p>
                         <div class="project-tech">
                             <span>Python</span>
-                            <span>LangChain</span>
-                            <span>OpenAI</span>
+                            <span>LLMs</span>
+                            <span>Agents</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-building"></i></a>
@@ -456,22 +495,18 @@
                         <p>Framework ligero en Python para construir agentes autónomos impulsados por LLMs.</p>
                         <div class="project-tech">
                             <span>Python</span>
-                            <span>LLMs</span>
-                            <span>Agentes</span>
+                            <span>Agents</span>
+                            <span>Open Source</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/generalsoftwareinc/SE-Agents" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/generalsoftwareinc/SE-Agents" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="assets/images/PDF-Parser.jpg" alt="PDF-Parser" style="visibility: hidden; position: absolute;">
-                        <div class="image-placeholder" style="background-color: #dc2626; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; position: relative;">
-                            <i class="fas fa-file-invoice" style="font-size: 4rem; color: #ffffff;"></i>
-                        </div>
+                        <img src="assets/images/PDF_parser.png" alt="PDF-Parser" class="project-icon">
                     </div>
                     <div class="project-content">
                         <h3>PDF-Parser - Extractor de Datos de Facturas</h3>
@@ -482,8 +517,6 @@
                             <span>Data Analysis</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                             <a href="#" class="project-link"><i class="fas fa-building"></i></a>
                         </div>
                     </div>
@@ -500,13 +533,11 @@
                         <h3>SIG - Sistema Integral de Gestión</h3>
                         <p>Sistema para gestionar el proceso completo de auditoría empresarial con notificaciones y permisos basados en roles.</p>
                         <div class="project-tech">
-                            <span>Java</span>
-                            <span>Spring Boot</span>
-                            <span>PostgreSQL</span>
+                            <span>PHP</span>
+                            <span>Yii</span>
+                            <span>DB</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                             <a href="#" class="project-link"><i class="fas fa-building"></i></a>
                         </div>
                     </div>

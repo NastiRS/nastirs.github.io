@@ -12,7 +12,7 @@
     text-align: center;
     transition: all var(--transition-normal);
     position: relative;
-    overflow: hidden;
+      overflow: hidden;
     z-index: 1;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -141,6 +141,9 @@
     transform: translateY(0) scale(1);
     will-change: transform, opacity;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
 }
 
 .project-card:hover {
@@ -175,14 +178,15 @@
 
 .project-image {
     width: 100%;
-    height: 200px;
+    height: 150px;
     overflow: hidden;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    max-height: 150px;
     transition: transform var(--transition-normal);
 }
 
@@ -192,6 +196,9 @@
 
 .project-content {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .project-content h3 {
@@ -206,6 +213,7 @@
     color: var(--text-secondary);
     margin-bottom: 20px;
     font-size: 0.95rem;
+    flex-grow: 1;
 }
 
 .project-tech {
@@ -213,6 +221,7 @@
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    margin-top: auto;
 }
 
 .project-tech span {
@@ -402,7 +411,11 @@
 .skill-icon img[src*="PowerAutomate.svg"],
 .skill-icon img[src*="powerautomate.svg"],
 .skill-icon img[src*="Supabase.svg"],
+.skill-icon img[src*="Signature_api.svg"],
+.skill-icon img[src*="Resend.svg"],
+.skill-icon img[src*="Stripe.svg"],
 .skill-icon img[src*="Firebase.svg"],
+.skill-icon img[src*="Appwrite.svg"],
 .skill-icon img[src*="Ollama.svg"],
 .skill-icon img[src*="ollama.svg"],
 .skill-icon img[src*="DBeaver.svg"],
@@ -444,7 +457,11 @@
 .skill-item:hover .skill-icon img[src*="PowerAutomate.svg"],
 .skill-item:hover .skill-icon img[src*="powerautomate.svg"],
 .skill-item:hover .skill-icon img[src*="Supabase.svg"],
+.skill-item:hover .skill-icon img[src*="Signature_api.svg"],
+.skill-item:hover .skill-icon img[src*="Resend.svg"],
+.skill-item:hover .skill-icon img[src*="Stripe.svg"],
 .skill-item:hover .skill-icon img[src*="Firebase.svg"],
+.skill-item:hover .skill-icon img[src*="Appwrite.svg"],
 .skill-item:hover .skill-icon img[src*="Ollama.svg"],
 .skill-item:hover .skill-icon img[src*="ollama.svg"],
 .skill-item:hover .skill-icon img[src*="DBeaver.svg"],
